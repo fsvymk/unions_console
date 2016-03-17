@@ -1,19 +1,8 @@
 #include <QCoreApplication>
 #include <iostream>
+#include <QUdpSocket>
 
 using namespace std;
-
-union myUnion
-{
-    int iValue;
-    float fValue;
-};
-
-struct myStruct
-{
-    int iValue;
-    float fValue;
-};
 
 struct entry{
     quint32 x;
@@ -31,9 +20,15 @@ union eu{
     char mini[8];
 };
 
-int main(int argc, char *argv[])
+QUdpSocket udpServerSocket;
+
+void readUdpDatagrams(){
+
+}
+
+int  main(int argc, char *argv[])
 {
-    //QCoreApplication a(argc, argv);
+    QCoreApplication a(argc, argv);
 
     eu e;
 
@@ -56,6 +51,6 @@ int main(int argc, char *argv[])
     cout << "Y = " << e.e.y << " ";
     cout << "\n";
 
-    //return a.exec();
+    return a.exec();
 }
 
